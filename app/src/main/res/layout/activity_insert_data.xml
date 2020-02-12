@@ -29,6 +29,7 @@
         android:orientation="vertical"
         android:background="#FFE500">
         <EditText
+            android:id="@+id/surname"
             android:layout_width="360dp"
             android:layout_height="35dp"
             android:background="#DEFFFA"
@@ -38,6 +39,7 @@
             android:textColorHint="#859E9E9E"
             android:hint="@string/hint_surname" />
         <EditText
+            android:id="@+id/firstname"
             android:layout_width="360dp"
             android:layout_height="35dp"
             android:background="#DEFFFA"
@@ -47,6 +49,7 @@
             android:textColorHint="#859E9E9E"
             android:hint="@string/hint_firstname" />
         <EditText
+            android:id="@+id/patronymic"
             android:layout_width="360dp"
             android:layout_height="35dp"
             android:background="#DEFFFA"
@@ -56,6 +59,7 @@
             android:textColorHint="#859E9E9E"
             android:hint="@string/hint_patronymic" />
         <EditText
+            android:id="@+id/age"
             android:layout_width="120dp"
             android:layout_height="35dp"
             android:background="#DEFFFA"
@@ -74,6 +78,7 @@
         <Button
             android:layout_width="150dp"
             android:layout_height="70dp"
-            android:text="@string/button_send"/>
+            android:text="@string/button_send"
+            android:onClick="sendDataToDB"/>
     </LinearLayout>
 </RelativeLayout>

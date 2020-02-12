@@ -10,7 +10,8 @@
         android:layout_centerInParent="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_launcher_background"/> <!--Добавить избражение в EPAM'е-->
+        android:background="#A992F0"
+        android:src="@drawable/image"/>
     <TextView
         android:id="@+id/label"
         android:layout_centerInParent="true"
