@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">DataBase01</string>
+    <!--MainActivity-->
+    <string name="button_to_displayActivity">Display</string>
+    <string name="button_to_insertActivity">Add</string>
+    <string name="title_in_MainActivity">Database</string>
+    <!--IsertDataActivity-->
+    <string name="title_isertdataActivity">Add Data</string>
+    <!--DisplayDataActivity-->
+    <string name="title_displaydataActivity">Display Data</string>
+    <string name="hint_surname">Surname</string>
+    <string name="hint_firstname">Firstname</string>
+    <string name="hint_patronymic">Patronymic</string>
+    <string name="hint_age">Age</string>
+    <string name="button_send">Send</string>
 </resources>

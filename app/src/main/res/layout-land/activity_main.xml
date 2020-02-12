@@ -10,12 +10,14 @@
         android:layout_centerInParent="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_launcher_background"/> <!--Добавить избражение в EPAM'е-->
+        android:src="@drawable/ic_launcher_background"/><!--Заменить изображение-->
     <TextView
         android:id="@+id/label"
         android:layout_centerInParent="true"
+        android:layout_above="@id/container_buttons"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
         android:text="@string/title_in_MainActivity"
         android:textSize="50sp"
         android:textColor="#000"/>
@@ -27,7 +29,7 @@
         <Button
             android:id="@+id/add_data"
             android:layout_width="0dp"
-            android:layout_height="150dp"
+            android:layout_height="120dp"
             android:layout_weight="1"
             android:text="@string/button_to_insertActivity"
             android:onClick="addData"
@@ -35,7 +37,7 @@
         <Button
             android:id="@+id/display_data"
             android:layout_width="0dp"
-            android:layout_height="150dp"
+            android:layout_height="120dp"
             android:layout_weight="1"
             android:text="@string/button_to_displayActivity"
             android:onClick="displayData"
