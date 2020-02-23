@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#6D52C9"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_insertActivity"
+        app:navigationIcon="?attr/homeAsUpIndicator"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/colorPrimary" >
+        <TextView
+            android:id="@+id/label"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_customer"
+            android:textSize="20sp"
+            android:textColor="#FFFFFF"/>
+    </androidx.appcompat.widget.Toolbar>
+    <LinearLayout
+        android:layout_below="@id/toolbar_insertActivity"
+        android:id="@+id/edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:background="#4BE662D8">
+        <EditText
+            android:id="@+id/surname"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="#DEFFFA"
+            android:textSize="20sp"
+            android:layout_margin="5dp"
+            android:inputType="textCapWords"
+            android:textColorHint="#859E9E9E"
+            android:hint="@string/hint_surname" />
+    <EditText
+        android:id="@+id/first_name"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:background="#DEFFFA"
+        android:textSize="20sp"
+        android:layout_margin="5dp"
+        android:inputType="textCapWords"
+        android:textColorHint="#859E9E9E"
+        android:hint="@string/hint_first_name" />
+    <EditText
+        android:id="@+id/patronymic"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:background="#DEFFFA"
+        android:textSize="20sp"
+        android:layout_margin="5dp"
+        android:inputType="textCapWords"
+        android:textColorHint="#859E9E9E"
+        android:hint="@string/hint_patronymic" />
+    <EditText
+        android:id="@+id/age"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:background="#DEFFFA"
+        android:textSize="20sp"
+        android:layout_margin="5dp"
+        android:inputType="number"
+        android:textColorHint="#859E9E9E"
+        android:hint="@string/hint_age" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_below="@id/edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="90dp"
+        android:gravity="center">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_button"
+            android:onClick="sendData"/>
+    </LinearLayout>
+</RelativeLayout>

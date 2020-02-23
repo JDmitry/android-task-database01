@@ -2,11 +2,11 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1126A5"
+    android:background="#6D52C9"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar_displaydataActivity"
+        android:id="@+id/toolbar_displayActivity"
         app:navigationIcon="?attr/homeAsUpIndicator"
         android:layout_width="match_parent"
         android:layout_height="60dp"
@@ -20,4 +20,21 @@
             android:textSize="20sp"
             android:textColor="#FFFFFF"/>
     </androidx.appcompat.widget.Toolbar>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@id/add_button"
+        android:id="@+id/my_recycler_view"
+        android:scrollbars="vertical"
+        android:background="#4BE662D8"
+        app:layoutManager="LinearLayoutManager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:layout_below="@id/toolbar_displayActivity"
+        android:id="@+id/add_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/add_data"
+        android:onClick="addData"
+        android:textSize="15sp"/>
 </RelativeLayout>
