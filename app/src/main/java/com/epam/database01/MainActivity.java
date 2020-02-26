@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
-    private Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void workWithDatabase(View view) {
-        intent = new Intent(MainActivity.this, DisplayActivity.class);
+       Intent intent = new Intent(MainActivity.this, DisplayActivity.class);
         startActivity(intent);
     }
 }

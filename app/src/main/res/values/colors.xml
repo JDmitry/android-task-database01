@@ -3,4 +3,19 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+    <!--MainActivity-->
+    <color name="background_main_activity">#A992F0</color>
+    <color name="text_main_activity">#000</color>
+    <!--Both-->
+    <color name="background_activity">#6D52C9</color>
+    <color name="text_label">#fff</color>
+    <color name="background_group">#4BE662D8</color>
+    <!--InsertActivity-->
+    <color name="bg_edit">#DEFFFA</color>
+    <color name="hint">#859E9E9E</color>
+    <!--item-->
+    <color name="item_text">#fff</color>
+
+
+
 </resources>

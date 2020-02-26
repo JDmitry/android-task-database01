@@ -1,20 +1,22 @@
-package com.epam.database01;
+package com.epam.database01.db;
 
 import android.annotation.SuppressLint;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+
+import com.epam.database01.DisplayActivity;
 import com.epam.database01.db.DBHelper;
 import com.epam.database01.db.FeedReaderContract;
 import com.epam.database01.model.Customer;
 import java.util.ArrayList;
 import java.util.List;
 
-class Display {
+public class Display {
     private List<Customer> customers;
     private Cursor cursor;
 
     @SuppressLint("Recycle")
-    Display(DisplayActivity displayActivity) {
+    public Display(DisplayActivity displayActivity) {
         DBHelper helper = new DBHelper(displayActivity);
         SQLiteDatabase db = helper.getReadableDatabase();
         cursor = db.rawQuery("SELECT * FROM " + FeedReaderContract.FeedEntry.TABLE_NAME, null);
@@ -33,10 +35,10 @@ class Display {
         }
     }
 
-    List<Customer> getCustomer() {
+    public List<Customer> getCustomer() {
         return customers;
     }
-    Cursor getCursor() {
+    public Cursor getCursor() {
         return cursor;
     }
 }

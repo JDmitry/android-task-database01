@@ -6,6 +6,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import com.epam.database01.db.Insert;
 
 public class InsertActivity extends AppCompatActivity {
     private EditText surname;

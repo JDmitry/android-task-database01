@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#6D52C9"
+    android:background="@color/background_activity"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.appcompat.widget.Toolbar
@@ -18,14 +18,14 @@
             android:layout_height="wrap_content"
             android:text="@string/title_displaydataActivity"
             android:textSize="20sp"
-            android:textColor="#FFFFFF"/>
+            android:textColor="@color/text_label"/>
     </androidx.appcompat.widget.Toolbar>
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_below="@id/add_button"
         android:id="@+id/my_recycler_view"
         android:scrollbars="vertical"
-        android:background="#4BE662D8"
+        android:background="@color/background_group"
         app:layoutManager="LinearLayoutManager"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>

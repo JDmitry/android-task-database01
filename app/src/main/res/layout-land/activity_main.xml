@@ -3,14 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#A992F0">
+    android:background="@color/background_main_activity">
 
     <ImageButton
         android:layout_above="@id/label"
         android:layout_centerInParent="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#A992F0"
+        android:background="@color/background_main_activity"
         android:src="@drawable/image"/>
     <TextView
         android:id="@+id/label"
@@ -20,7 +20,7 @@
         android:layout_marginBottom="15dp"
         android:text="@string/title_in_MainActivity"
         android:textSize="50sp"
-        android:textColor="#000"/>
+        android:textColor="@color/text_main_activity"/>
     <TextView
         android:id="@+id/explanation"
         android:layout_marginTop="10dp"
@@ -28,7 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:text="@string/explanation"
-        android:textColor="#474747"
+        android:textColor="@color/text_main_activity"
         android:layout_below="@id/label" />
     <Button
         android:id="@+id/add_data"

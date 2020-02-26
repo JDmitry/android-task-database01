@@ -9,6 +9,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.epam.database01.adapter.MyAdapter;
+import com.epam.database01.db.Display;
 
 public class DisplayActivity extends AppCompatActivity {
     private Display display;

@@ -21,18 +21,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         this.customers = customers;
     }
 
-    static class MyViewHolder extends RecyclerView.ViewHolder{
-        final TextView surname, firstName, patronymic, age;
-
-        MyViewHolder(@NonNull View itemView) {
-            super(itemView);
-            surname = itemView.findViewById(R.id.sur);
-            firstName = itemView.findViewById(R.id.fir);
-            patronymic = itemView.findViewById(R.id.pat);
-            age = itemView.findViewById(R.id.age);
-        }
-    }
-
     @NonNull
     @Override
     public MyAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -58,5 +46,17 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     @Override
     public int getItemCount() {
         return customers.size();
+    }
+
+    static class MyViewHolder extends RecyclerView.ViewHolder{
+        final TextView surname, firstName, patronymic, age;
+
+        MyViewHolder(@NonNull View itemView) {
+            super(itemView);
+            surname = itemView.findViewById(R.id.sur);
+            firstName = itemView.findViewById(R.id.fir);
+            patronymic = itemView.findViewById(R.id.pat);
+            age = itemView.findViewById(R.id.age);
+        }
     }
 }
