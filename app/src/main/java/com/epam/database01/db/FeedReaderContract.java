@@ -1,4 +1,4 @@
-package com.epam.database01;
+package com.epam.database01.db;
 
 import android.provider.BaseColumns;
 public final class FeedReaderContract {

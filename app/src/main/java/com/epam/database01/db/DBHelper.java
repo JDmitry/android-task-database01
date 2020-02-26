@@ -1,11 +1,11 @@
-package com.epam.database01;
+package com.epam.database01.db;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-class DBHelper extends SQLiteOpenHelper {
-    private final static String DATABASE_NAME = "shop.db";
+public class DBHelper extends SQLiteOpenHelper {
+    private final static String DATABASE_NAME = "shop";
     private final static int DATABASE_VERSION = 1;
 
     private static final String SQL_CREATE_ENTRIES = "CREATE TABLE " + FeedReaderContract.FeedEntry.TABLE_NAME + "(" +

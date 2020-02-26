@@ -1,21 +1,21 @@
-package com.epam.database01;
+package com.epam.database01.model;
 
 public class Customer {
-    private int id;
+    private long id;
     private String surname;
     private String firstName;
-    private String patrymonic;
+    private String patronymic;
     private int age;
 
-    public Customer(int id, String surname, String firstName, String patrymonic, int age) {
+    public Customer(long id, String surname, String firstName, String patronymic, int age) {
         this.id = id;
         this.surname = surname;
         this.firstName = firstName;
-        this.patrymonic = patrymonic;
+        this.patronymic = patronymic;
         this.age = age;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
@@ -28,7 +28,7 @@ public class Customer {
     }
 
     public String getPatrymonic() {
-        return patrymonic;
+        return patronymic;
     }
 
     public int getAge() {
