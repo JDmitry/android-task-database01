@@ -21,14 +21,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         this.customers = customers;
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder{
-        final TextView surname, firstName, patrymonic, age;
+    static class MyViewHolder extends RecyclerView.ViewHolder{
+        final TextView surname, firstName, patronymic, age;
 
-        public MyViewHolder(@NonNull View itemView) {
+        MyViewHolder(@NonNull View itemView) {
             super(itemView);
             surname = itemView.findViewById(R.id.sur);
             firstName = itemView.findViewById(R.id.fir);
-            patrymonic = itemView.findViewById(R.id.pat);
+            patronymic = itemView.findViewById(R.id.pat);
             age = itemView.findViewById(R.id.age);
         }
     }
@@ -44,11 +44,15 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull MyAdapter.MyViewHolder holder, int position) {
         Customer customer = customers.get(position);
+        holder.surname.append(customer.getSurname() + "  ");
+        holder.patronymic.append(customer.getPatrymonic().substring(0, 1) + ". ");
+        holder.firstName.append(customer.getFirstName().substring(0, 1) + ". ");
+        holder.age.append("\nAge: " + customer.getAge() + "\n*******************\n");
+    }
 
-        holder.surname.setText(customer.getSurname());
-        holder.firstName.setText(customer.getFirstName());
-        holder.patrymonic.setText(customer.getPatrymonic());
-        holder.age.setText(Integer.toString(customer.getAge()));
+    @Override
+    public void onAttachedToRecyclerView(@NonNull RecyclerView recyclerView) {
+        super.onAttachedToRecyclerView(recyclerView);
     }
 
     @Override

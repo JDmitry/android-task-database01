@@ -3,21 +3,14 @@ package com.epam.database01;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.epam.database01.adapter.MyAdapter;
-import com.epam.database01.db.DBHelper;
-
 
 public class DisplayActivity extends AppCompatActivity {
-    private DBHelper helper;
-    private SQLiteDatabase db;
-    private Cursor cursor;
     private Display display;
 
     @Override
@@ -32,27 +25,12 @@ public class DisplayActivity extends AppCompatActivity {
                 finish();
             }
         });
+    }
 
-        /*DBHelper helper = new DBHelper(getApplicationContext());
-        SQLiteDatabase db = helper.getReadableDatabase();
-        cursor = db.rawQuery("SELECT * FROM " + FeedReaderContract.FeedEntry.TABLE_NAME, null);
-
-        List<Customer>  customers = new ArrayList<>();
-
-        if (cursor.moveToFirst()) {
-           do{
-                customers.add(new Customer(
-                        cursor.getInt(0),
-                        cursor.getString(1),
-                        cursor.getString(2),
-                        cursor.getString(3),
-                        cursor.getInt(4))
-                );
-            }while (cursor.moveToNext());
-        }*/
-
+    @Override
+    protected void onResume() {
+        super.onResume();
         display = new Display(this);
-
         RecyclerView recyclerView = findViewById(R.id.my_recycler_view);
         recyclerView.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);

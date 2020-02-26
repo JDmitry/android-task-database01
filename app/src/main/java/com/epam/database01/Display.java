@@ -18,7 +18,6 @@ class Display {
         DBHelper helper = new DBHelper(displayActivity);
         SQLiteDatabase db = helper.getReadableDatabase();
         cursor = db.rawQuery("SELECT * FROM " + FeedReaderContract.FeedEntry.TABLE_NAME, null);
-
         customers = new ArrayList<>();
 
         if (cursor.moveToFirst()) {
@@ -37,7 +36,6 @@ class Display {
     List<Customer> getCustomer() {
         return customers;
     }
-
     Cursor getCursor() {
         return cursor;
     }
