@@ -1,8 +1,8 @@
 package com.epam.database01.db;
 
 import android.provider.BaseColumns;
-final class FeedReaderContract {
 
+final class FeedReaderContract {
     private FeedReaderContract() {}
 
     static class FeedEntry implements BaseColumns {

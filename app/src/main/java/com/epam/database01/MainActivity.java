@@ -14,8 +14,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void workWithDatabase(View view) {
-       Intent intent = new Intent(MainActivity.this, DisplayActivity.class);
+    public void startDatabase(View view) {
+        Intent intent = new Intent(MainActivity.this, DisplayActivity.class);
         startActivity(intent);
     }
 }

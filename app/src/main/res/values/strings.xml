@@ -5,7 +5,7 @@
     <string name="title_in_MainActivity">Database</string>
     <string name="explanation">Click the button to start working with the database</string>
     <!--DisplayActivity-->
-    <string name="title_displaydataActivity">List</string>
+    <string name="title_display_dataActivity">List</string>
     <string name="add_data">Add new customer</string>
     <!--InsertActivity-->
     <string name="add_customer">Insertion</string>

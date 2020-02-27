@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_activity"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:background="@color/background_activity" >
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_displayActivity"
-        app:navigationIcon="?attr/homeAsUpIndicator"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="@color/colorPrimary" >
+        android:background="@color/colorPrimary"
+        app:navigationIcon="?attr/homeAsUpIndicator" >
         <TextView
             android:id="@+id/label"
-            android:layout_centerInParent="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/title_displaydataActivity"
+            android:text="@string/title_display_dataActivity"
             android:textSize="20sp"
-            android:textColor="@color/text_label"/>
+            android:textColor="@color/text_label"
+            android:layout_centerInParent="true"/>
     </androidx.appcompat.widget.Toolbar>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_below="@id/add_button"
         android:id="@+id/my_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:scrollbars="vertical"
         android:background="@color/background_group"
-        app:layoutManager="LinearLayoutManager"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_below="@id/add_button"
+        app:layoutManager="LinearLayoutManager" />
     <Button
-        android:layout_below="@id/toolbar_displayActivity"
         android:id="@+id/add_button"
+        android:layout_below="@id/toolbar_displayActivity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/add_data"
