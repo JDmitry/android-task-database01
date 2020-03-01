@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">DataBase01</string>
     <!--MainActivity-->
-    <string name="button_to_insertActivity">Click</string>
+    <string name="button_to_insertActivity">Enter</string>
     <string name="title_in_MainActivity">Database</string>
     <string name="explanation">Click the button to start working with the database</string>
     <!--DisplayActivity-->

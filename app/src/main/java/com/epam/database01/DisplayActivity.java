@@ -8,11 +8,13 @@ import android.view.View;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import com.epam.database01.adapter.MyAdapter;
+import com.epam.database01.adapter.CustomersAdapter;
 import com.epam.database01.db.Display;
 
 public class DisplayActivity extends AppCompatActivity {
-    private Display display;
+    private RecyclerView recyclerView;
+    private Display display = new Display(this);
+    private CustomersAdapter adapter = new CustomersAdapter();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,28 +28,21 @@ public class DisplayActivity extends AppCompatActivity {
                 finish();
             }
         });
+        recyclerView = findViewById(R.id.my_recycler_view);
+        recyclerView.setHasFixedSize(true);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        display = new Display(this);
-        RecyclerView recyclerView = findViewById(R.id.my_recycler_view);
-        recyclerView.setHasFixedSize(true);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(layoutManager);
-        RecyclerView.Adapter adapter = new MyAdapter(this, display.getCustomer());
+        adapter.addAll(display.getCustomers());
         recyclerView.setAdapter(adapter);
     }
 
     public void addData(View view) {
         Intent intent = new Intent(this, InsertActivity.class);
         startActivity(intent);
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        display.getCursor().close();
     }
 }

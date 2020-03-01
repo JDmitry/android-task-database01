@@ -13,6 +13,7 @@
         android:src="@drawable/image"
         android:layout_above="@id/label"
         android:layout_centerInParent="true" />
+
     <TextView
         android:id="@+id/label"
         android:layout_width="wrap_content"
@@ -20,7 +21,8 @@
         android:text="@string/title_in_MainActivity"
         android:textSize="50sp"
         android:textColor="@color/text_main_activity"
-        android:layout_centerInParent="true"/>
+        android:layout_centerInParent="true" />
+
     <TextView
         android:id="@+id/explanation"
         android:layout_marginTop="30dp"
@@ -30,6 +32,7 @@
         android:textColor="@color/text_main_activity"
         android:layout_centerInParent="true"
         android:layout_below="@id/label" />
+
     <Button
         android:id="@+id/add_data"
         android:layout_marginTop="10dp"

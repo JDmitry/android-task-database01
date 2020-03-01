@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_activity"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_insertActivity"
@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="@color/colorPrimary" >
+
         <TextView
             android:id="@+id/label"
             android:layout_centerInParent="true"
@@ -18,8 +19,9 @@
             android:layout_height="wrap_content"
             android:text="@string/add_customer"
             android:textSize="20sp"
-            android:textColor="@color/text_label"/>
+            android:textColor="@color/text_label" />
     </androidx.appcompat.widget.Toolbar>
+
     <LinearLayout
         android:layout_below="@id/toolbar_insertActivity"
         android:id="@+id/edit_text"
@@ -27,7 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:orientation="vertical"
-        android:background="@color/background_group">
+        android:background="@color/background_group" >
 
         <EditText
             android:id="@+id/surname"
@@ -39,6 +41,7 @@
             android:inputType="textCapWords"
             android:textColorHint="@color/hint"
             android:hint="@string/hint_surname" />
+
         <EditText
             android:id="@+id/first_name"
             android:layout_width="match_parent"
@@ -49,6 +52,7 @@
             android:inputType="textCapWords"
             android:textColorHint="@color/hint"
             android:hint="@string/hint_first_name" />
+
         <EditText
             android:id="@+id/patronymic"
             android:layout_width="match_parent"
@@ -59,6 +63,7 @@
             android:inputType="textCapWords"
             android:textColorHint="@color/hint"
             android:hint="@string/hint_patronymic" />
+
         <EditText
             android:id="@+id/age"
             android:layout_width="match_parent"
@@ -70,16 +75,18 @@
             android:textColorHint="@color/hint"
             android:hint="@string/hint_age" />
     </LinearLayout>
+
     <LinearLayout
         android:layout_below="@id/edit_text"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="10dp"
-        android:gravity="center">
+        android:gravity="center" >
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/add_button"
-            android:onClick="sendData"/>
+            android:onClick="sendData" />
     </LinearLayout>
 </RelativeLayout>

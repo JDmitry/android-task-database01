@@ -1,41 +1,44 @@
 package com.epam.database01.adapter;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import java.util.ArrayList;
 import java.util.List;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.epam.database01.R;
 import com.epam.database01.model.Customer;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CustomerViewHolder> {
-    private LayoutInflater inflater;
-    private List<Customer> customers;
+public class CustomersAdapter extends RecyclerView.Adapter<CustomersAdapter.CustomerViewHolder> {
+    private List<Customer> customers = new ArrayList<>();
 
-    public MyAdapter(Context context, List<Customer> customers) {
-        this.inflater = LayoutInflater.from(context);
+    public void addAll(List<Customer> customers) {
         this.customers = customers;
+    }
+
+    public void add(Customer customer) {
+        customers.add(customer);
     }
 
     @NonNull
     @Override
-    public MyAdapter.CustomerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = inflater.inflate(R.layout.items, parent, false);
+    public CustomersAdapter.CustomerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.items, parent, false);
         return new CustomerViewHolder(view);
     }
 
     @SuppressLint("SetTextI18n")
     @Override
-    public void onBindViewHolder(@NonNull MyAdapter.CustomerViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull CustomersAdapter.CustomerViewHolder holder, int position) {
         Customer customer = customers.get(position);
-        holder.surname.append(customer.getSurname() + "  ");
+        holder.surname.setText(customer.getSurname());
         holder.patronymic.append(customer.getPatrymonic().substring(0, 1) + ". ");
         holder.firstName.append(customer.getFirstName().substring(0, 1) + ".\n");
-        holder.age.append("Age: " + customer.getAge() + "\n__________________________________________\n");
+        holder.age.append("Age: " + customer.getAge());
     }
 
     @Override

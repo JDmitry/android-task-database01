@@ -1,6 +1,7 @@
 package com.epam.database01.db;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import com.epam.database01.DisplayActivity;
@@ -9,15 +10,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Display {
-    private List<Customer> customers;
-    private Cursor cursor;
+    private Context context;
 
     @SuppressLint("Recycle")
     public Display(DisplayActivity displayActivity) {
-        DBHelper helper = new DBHelper(displayActivity);
+        context = displayActivity;
+    }
+
+    public List<Customer> getCustomers() {
+        DBHelper helper = new DBHelper(context);
         SQLiteDatabase db = helper.getReadableDatabase();
-        cursor = db.rawQuery("SELECT * FROM " + FeedReaderContract.FeedEntry.TABLE_NAME, null);
-        customers = new ArrayList<>();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + FeedReaderContract.FeedEntry.TABLE_NAME, null);
+        List<Customer> customers = new ArrayList<>();
 
         if (cursor.moveToFirst()) {
             do{
@@ -30,12 +34,7 @@ public class Display {
                 );
             }while (cursor.moveToNext());
         }
-    }
-
-    public List<Customer> getCustomer() {
+        cursor.close();
         return customers;
-    }
-    public Cursor getCursor() {
-        return cursor;
     }
 }

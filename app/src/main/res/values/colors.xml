@@ -4,10 +4,10 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <!--MainActivity-->
-    <color name="background_main_activity">#A992F0</color>
-    <color name="text_main_activity">#3E3E3E</color>
+    <color name="background_main_activity">#3A3A3C</color>
+    <color name="text_main_activity">#D0D0D0</color>
     <!--Both_Activity-->
-    <color name="background_activity">#6D52C9</color>
+    <color name="background_activity">#3A3A3C</color>
     <color name="text_label">#fff</color>
     <color name="background_group">#4BE662D8</color>
     <!--InsertActivity-->
@@ -15,4 +15,5 @@
     <color name="hint">#859E9E9E</color>
     <!--item-->
     <color name="item_text">#fff</color>
+    <color name="item_separator">#eee</color>
 </resources>
