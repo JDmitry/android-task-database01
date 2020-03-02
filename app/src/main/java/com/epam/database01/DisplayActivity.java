@@ -12,9 +12,6 @@ import com.epam.database01.adapter.CustomersAdapter;
 import com.epam.database01.db.Display;
 
 public class DisplayActivity extends AppCompatActivity {
-    private RecyclerView recyclerView;
-    private Display display = new Display(this);
-    private CustomersAdapter adapter = new CustomersAdapter();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,15 +25,17 @@ public class DisplayActivity extends AppCompatActivity {
                 finish();
             }
         });
-        recyclerView = findViewById(R.id.my_recycler_view);
-        recyclerView.setHasFixedSize(true);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(layoutManager);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+        RecyclerView recyclerView = findViewById(R.id.my_recycler_view);
+        Display display = new Display(this);
+        recyclerView.setHasFixedSize(true);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+        CustomersAdapter adapter = new CustomersAdapter();
         adapter.addAll(display.getCustomers());
         recyclerView.setAdapter(adapter);
     }

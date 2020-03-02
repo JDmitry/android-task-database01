@@ -36,14 +36,9 @@ public class CustomersAdapter extends RecyclerView.Adapter<CustomersAdapter.Cust
     public void onBindViewHolder(@NonNull CustomersAdapter.CustomerViewHolder holder, int position) {
         Customer customer = customers.get(position);
         holder.surname.setText(customer.getSurname());
-        holder.patronymic.append(customer.getPatrymonic().substring(0, 1) + ". ");
-        holder.firstName.append(customer.getFirstName().substring(0, 1) + ".\n");
-        holder.age.append("Age: " + customer.getAge());
-    }
-
-    @Override
-    public void onAttachedToRecyclerView(@NonNull RecyclerView recyclerView) {
-        super.onAttachedToRecyclerView(recyclerView);
+        holder.firstName.append(customer.getFirstName().substring(0, 1));
+        holder.patronymic.append(customer.getPatrymonic().substring(0, 1));
+        holder.age.append(String.valueOf(customer.getAge()));
     }
 
     @Override

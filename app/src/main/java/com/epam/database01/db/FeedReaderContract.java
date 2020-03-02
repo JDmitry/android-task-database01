@@ -18,5 +18,6 @@ final class FeedReaderContract {
                 FeedReaderContract.FeedEntry.COLUMN_PATRONYMIC + " TEXT," +
                 FeedReaderContract.FeedEntry.COLUMN_AGE + " INTEGER NOT NULL" + ");";
         static final String SQL_DELETE_ENTRIES = "DROP TABLE IF EXISTS " + FeedReaderContract.FeedEntry.TABLE_NAME;
+        static final String SQL_QUERY = "SELECT * FROM ";
     }
 }

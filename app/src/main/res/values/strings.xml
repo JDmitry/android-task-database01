@@ -14,6 +14,14 @@
     <string name="hint_patronymic">Patronymic</string>
     <string name="hint_age">Age</string>
     <string name="add_button">Send</string>
+    <string name="check_message">"Fill all the required fields"</string>
+    <string name="toast_message">Data is added</string>
+    <string name="without_patronymic">_</string>
+    <!--Adapter-->
+    <string name="first_name_display"></string>
+    <string name="patronymic_display"></string>
+    <string name="age_display"></string>
+
 
 
 

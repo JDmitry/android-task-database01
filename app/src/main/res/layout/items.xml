@@ -23,6 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
+        android:text="@string/first_name_display"
         android:textSize="20sp"
         android:textColor="@color/item_text" />
 
@@ -31,6 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
+        android:text="@string/patronymic_display"
         android:textSize="20sp"
         android:textColor="@color/item_text" />
     </LinearLayout>
@@ -42,6 +44,7 @@
         android:layout_marginTop="5dp"
         android:layout_marginStart="5dp"
         android:layout_marginBottom="5dp"
+        android:text="@string/age_display"
         android:textSize="20sp"
         android:textColor="@color/item_text" />
 
