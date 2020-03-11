@@ -7,8 +7,15 @@ import android.widget.Toast;
 import com.epam.database01.InsertActivity;
 import com.epam.database01.R;
 
-public class Insert {
-    public Insert(InsertActivity insertActivity, String surname, String firstName, String patronymic, String age) {
+public class Insert implements Insertable{
+
+    @Override
+    public void setData() {
+
+    }
+
+    @Override
+    public void setData(final InsertActivity insertActivity, final String surname, final String firstName, final String patronymic, final String age) {
         DBHelper helper = new DBHelper(insertActivity);
         SQLiteDatabase db = helper.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -24,3 +31,4 @@ public class Insert {
         }
     }
 }
+

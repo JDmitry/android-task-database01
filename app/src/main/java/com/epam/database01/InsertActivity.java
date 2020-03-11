@@ -3,18 +3,22 @@ package com.epam.database01;
 import androidx.appcompat.app.AppCompatActivity;
 
 import androidx.appcompat.widget.Toolbar;
+
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 import com.epam.database01.db.Insert;
+import com.epam.database01.db.Insertable;
 
 public class InsertActivity extends AppCompatActivity {
     private EditText surname;
     private EditText firstName;
     private EditText patronymic;
     private EditText age;
+    Insertable insert;
 
     @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +37,7 @@ public class InsertActivity extends AppCompatActivity {
         firstName = findViewById(R.id.first_name);
         patronymic = findViewById(R.id.patronymic);
         age = findViewById(R.id.age);
+        insert = new Insert();
     }
 
     public void sendData(View view) {
@@ -50,7 +55,7 @@ public class InsertActivity extends AppCompatActivity {
                 patronymic.setText(R.string.without_patronymic);
                 col_patronymic = patronymic.getText().toString();
             }
-            new Insert(this, col_surname, col_first_name, col_patronymic, col_age);
+            insert.setData(this, col_surname, col_first_name, col_patronymic, col_age);
             finish();
         }
     }

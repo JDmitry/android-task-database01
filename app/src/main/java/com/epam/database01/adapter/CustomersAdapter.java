@@ -1,6 +1,8 @@
 package com.epam.database01.adapter;
 
 import android.annotation.SuppressLint;
+import android.content.ContentResolver;
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +14,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.epam.database01.R;
 import com.epam.database01.model.Customer;
+
+import static android.provider.Settings.System.getString;
 
 public class CustomersAdapter extends RecyclerView.Adapter<CustomersAdapter.CustomerViewHolder> {
     private List<Customer> customers = new ArrayList<>();
@@ -31,13 +35,12 @@ public class CustomersAdapter extends RecyclerView.Adapter<CustomersAdapter.Cust
         return new CustomerViewHolder(view);
     }
 
-    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull CustomersAdapter.CustomerViewHolder holder, int position) {
         Customer customer = customers.get(position);
         holder.surname.setText(customer.getSurname());
-        holder.firstName.append(customer.getFirstName().substring(0, 1));
-        holder.patronymic.append(customer.getPatrymonic().substring(0, 1));
+        holder.firstName.setText(String.format("%s%s", customer.getFirstName().substring(0, 1), holder.firstName.getText()));
+        holder.patronymic.setText(String.format("%s%s", customer.getPatrymonic().substring(0, 1), holder.patronymic.getText()));
         holder.age.append(String.valueOf(customer.getAge()));
     }
 

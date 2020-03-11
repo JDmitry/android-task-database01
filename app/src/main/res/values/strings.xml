@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">DataBase01</string>
     <!--MainActivity-->
@@ -18,11 +19,7 @@
     <string name="toast_message">Data is added</string>
     <string name="without_patronymic">_</string>
     <!--Adapter-->
-    <string name="first_name_display"></string>
-    <string name="patronymic_display"></string>
-    <string name="age_display"></string>
-
-
-
-
+    <string name="first_name_display">.</string>
+    <string name="patronymic_display">.</string>
+    <string name="age_display">Age:&#xA0;&#xA0;</string>
 </resources>
