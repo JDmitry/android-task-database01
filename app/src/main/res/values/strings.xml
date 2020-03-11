@@ -8,6 +8,8 @@
     <!--DisplayActivity-->
     <string name="title_display_dataActivity">List</string>
     <string name="add_data">Add new customer</string>
+    <!--Insert-->
+    <string name="begin_toast">Process of Insertion is begin</string>
     <!--InsertActivity-->
     <string name="add_customer">Insertion</string>
     <string name="hint_surname">Surname</string>

@@ -9,25 +9,36 @@ import java.util.List;
 
 public class Display implements Displayable{
     private List<Customer> customers;
+    private SQLiteDatabase db;
+    private DBHelper helper;
+    private Cursor cursor;
 
     public Display(Context displayActivity) {
         customers = new ArrayList<>();
-        DBHelper helper = new DBHelper(displayActivity);
-        SQLiteDatabase db = helper.getReadableDatabase();
-        Cursor cursor = db.rawQuery(FeedReaderContract.FeedEntry.SQL_QUERY + FeedReaderContract.FeedEntry.TABLE_NAME, null);
-
-        if (cursor.moveToFirst()) {
-            do {
-                customers.add(new Customer(cursor.getInt(0),
-                        cursor.getString(1),
-                        cursor.getString(2),
-                        cursor.getString(3),
-                        cursor.getInt(4))
-                );
-            } while (cursor.moveToNext());
-        }
-        cursor.close();
+        helper = new DBHelper(displayActivity);
+        db = helper.getReadableDatabase();
     }
+
+        public void createCollection() {
+            Thread thread = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    cursor = db.rawQuery(FeedReaderContract.FeedEntry.SQL_QUERY + FeedReaderContract.FeedEntry.TABLE_NAME, null);
+                    if (cursor.moveToFirst()) {
+                        do {
+                            customers.add(new Customer(cursor.getInt(0),
+                                    cursor.getString(1),
+                                    cursor.getString(2),
+                                    cursor.getString(3),
+                                    cursor.getInt(4))
+                            );
+                        } while (cursor.moveToNext());
+                    }
+                    cursor.close();
+                }
+            });
+            thread.start();
+        }
 
     public List<Customer> getCustomers() {
         return customers;

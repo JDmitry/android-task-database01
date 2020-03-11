@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -41,34 +42,19 @@ public class DisplayActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        display = new Display(this);
         recyclerView = findViewById(R.id.my_recycler_view);
         recyclerView.setHasFixedSize(true);
         layoutManager= new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
-        DisplayTask displayTask = new DisplayTask();
-        displayTask.execute();
+        adapter = new CustomersAdapter();
+        display.createCollection();
+        adapter.addAll(display.getCustomers());
+        recyclerView.setAdapter(adapter);
     }
 
     public void addData(View view) {
         Intent intent = new Intent(this, InsertActivity.class);
         startActivity(intent);
-    }
-
-    @SuppressLint("StaticFieldLeak")
-    public class DisplayTask extends AsyncTask<Void,Void,Void> {
-
-        @Override
-        protected Void doInBackground(Void... voids) {
-            display = new Display(getApplicationContext());
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void aVoid) {
-            super.onPostExecute(aVoid);
-            adapter = new CustomersAdapter();
-            adapter.addAll(display.getCustomers());
-            recyclerView.setAdapter(adapter);
-        }
     }
 }
