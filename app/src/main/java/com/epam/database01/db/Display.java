@@ -7,20 +7,20 @@ import com.epam.database01.model.Customer;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Display implements Displayable{
+public class Display implements Displayable {
     private List<Customer> customers;
     private SQLiteDatabase db;
     private DBHelper helper;
     private Cursor cursor;
 
-    public Display(Context displayActivity) {
+    public Display(Context context) {
         customers = new ArrayList<>();
-        helper = new DBHelper(displayActivity);
+        helper = new DBHelper(context);
         db = helper.getReadableDatabase();
     }
 
-        public void createCollection() {
-            Thread thread = new Thread(new Runnable() {
+    public void createCollection() {
+        Thread thread = new Thread(new Runnable() {
                 @Override
                 public void run() {
                     cursor = db.rawQuery(FeedReaderContract.FeedEntry.SQL_QUERY + FeedReaderContract.FeedEntry.TABLE_NAME, null);

@@ -3,7 +3,6 @@ package com.epam.database01;
 import androidx.appcompat.app.AppCompatActivity;
 
 import androidx.appcompat.widget.Toolbar;
-
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -17,7 +16,7 @@ public class InsertActivity extends AppCompatActivity {
     private EditText firstName;
     private EditText patronymic;
     private EditText age;
-    Insertable insert;
+    private Insertable insert;
 
     @Override
         protected void onCreate(Bundle savedInstanceState) {

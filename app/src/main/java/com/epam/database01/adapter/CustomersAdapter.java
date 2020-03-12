@@ -43,7 +43,7 @@ public class CustomersAdapter extends RecyclerView.Adapter<CustomersAdapter.Cust
         return customers.size();
     }
 
-    static class CustomerViewHolder extends RecyclerView.ViewHolder{
+    static class CustomerViewHolder extends RecyclerView.ViewHolder {
         private final TextView surname, firstName, patronymic, age;
 
         public TextView getSurname() {
